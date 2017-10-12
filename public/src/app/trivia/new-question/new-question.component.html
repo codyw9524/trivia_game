@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col">
+    <h2>New Question</h2>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <form (submit)="createQuestion()">
+      <div class="form-group row">
+        <label class="col-2 col-form-label">Question</label>
+        <div class="col-10">
+          <input type="text" name="question" class="form-control" [(ngModel)]="newQuestion.question">
+        </div>
+      </div>
+      <div class="form-group row" *ngFor="let answer of newQuestion.answers; let idx = index">
+          <label class="col-2 col-form-label" *ngIf="idx == 0">Correct Answer</label>
+          <label class="col-2 col-form-label" *ngIf="idx > 0">Wrong Answer {{ idx }}</label>
+          <div class="col-10">
+            <input type="text" name="question" class="form-control" [(ngModel)]="newQuestion.answers[idx].answer">
+          </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <p [ngStyle]="{ 'color': 'red' }"
+    *ngFor="let error of errors">{{ error }}</p>
+    <p [ngStyle]="{ 'color': 'green' }" *ngIf="success.status">{{ success.message }}</p>
+  </div>
+</div>

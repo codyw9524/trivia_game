@@ -1,0 +1,14 @@
+.question_box {
+    border: 2px solid black;
+    margin: 1em 0 1em ;
+    padding: 15px;
+}
+.header p {
+    margin-bottom: .5rem;
+}
+.game_button {
+    margin-right: 1em;
+}
+.footer {
+    height: 100px;
+}

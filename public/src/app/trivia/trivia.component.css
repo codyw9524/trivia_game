@@ -1,0 +1,24 @@
+.header_links_list {
+    display: block;
+    margin-left: 0;
+    padding-left: 0;
+}
+    .header_links_list li {
+        display: inline;
+    }
+    .header_links_list li:first-child {
+        margin-left: 0;
+    }
+    .header_links_list li:first-child::after {
+        content: '|';
+        margin: 0 1em 0 1em;
+    }
+    .header_links_list li:last-child {
+        float: right;
+        margin-right: 0;
+    }
+
+.logout_link {
+    color: #007bff !important;
+    cursor: pointer !important;
+}
