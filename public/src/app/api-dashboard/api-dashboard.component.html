@@ -5,7 +5,7 @@
           <div class="form-group">
             <label for="">No. of Questions</label>
             <select name="num" [(ngModel)]="APIRequest.num_of_questions">
-              <option>5</option>
+              <option [value]="0">5</option>
               <option>10</option>
               <option>15</option>
               <option>20</option>
@@ -15,7 +15,7 @@
           <div class="form-group">
             <label for="">Category</label>
             <select name="num" [(ngModel)]="APIRequest.category">
-              <option selected [value]="-2">All</option>
+              <option [value]="0">All</option>
               <option [value]="-1">Random</option>
               <option 
                 *ngFor="let category of categories"
@@ -23,9 +23,20 @@
                 [innerHTML]="category.name"></option>
             </select>
           </div>
-          <button type="submit" class="btn btn-primary btn-lg">Play</button>
+          <div class="form-group">
+            <label for="">Difficulty</label>
+            <select name="num" [(ngModel)]="APIRequest.difficulty">
+              <option [value]="0">Any Difficulty</option>
+              <option [value]="'easy'">Easy</option>
+              <option [value]="'medium'">Medium</option>
+              <option [value]="'hard'">Hard</option>
+            </select>
+          </div>
+          <div class="center_align">
+            <button type="submit" class="btn btn-primary btn-lg">Play</button>
+            <p>Click the button above to start the trivia game</p>
+          </div>
         </form>
-        <p>Click the button above to start the trivia game</p>
       </div>
     </div>
   </div>

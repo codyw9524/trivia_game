@@ -30,8 +30,9 @@ export class GameComponent implements OnInit {
   ngOnInit() {
     this.getCurrentUser();
     this.validateSession();
+    this.getQuestionsFromService();
     // this.getRandomQuestions();
-    this.getQuestionsFromAPI(5);
+    // this.getQuestionsFromAPI();
   }
 
   onSubmit() {
@@ -62,15 +63,27 @@ export class GameComponent implements OnInit {
     }
   }
 
-  getQuestionsFromAPI(num: number): void {
-    this._apiService.getQuestions(num, (questions) => this.questions = questions);
+  getQuestionsFromService() {
+    this.questions = this._apiService.getQuestionsFromService();
+    if (this.questions.length === 0) {
+      this._router.navigateByUrl('/trivia');
+    }
   }
 
-  getRandomQuestions(): void {
-    this._questionService.getRandomQuestions(5, (questions) => {
-      this.questions = questions;
-      console.log(this.questions);
-    });
+  cancelGame() {
+    this._apiService.questions = [];
+    this._router.navigateByUrl('/trivia');
   }
+
+  // getQuestionsFromAPI(num: number): void {
+  //   this._apiService.getQuestions(num, (questions) => this.questions = questions);
+  // }
+
+  // getRandomQuestions(): void {
+  //   this._questionService.getRandomQuestions(5, (questions) => {
+  //     this.questions = questions;
+  //     console.log(this.questions);
+  //   });
+  // }
 
 }

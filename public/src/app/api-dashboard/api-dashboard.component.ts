@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { ApiRequest } from './../apirequest';
 import { Category } from './../category';
 import { ApiService } from './../api.service';
@@ -14,7 +15,8 @@ export class ApiDashboardComponent implements OnInit {
   APIRequest = new ApiRequest ();
 
   constructor(
-    private _apiService: ApiService
+    private _apiService: ApiService,
+    private _router: Router
   ) { }
 
   ngOnInit() {
@@ -26,7 +28,11 @@ export class ApiDashboardComponent implements OnInit {
   }
 
   onSubmit() {
-    
+    const category_ids = [];
+    this.categories.forEach((category) => category_ids.push(category.id));
+    this._apiService.getQuestionsFromAPI(this.APIRequest, category_ids, () => {
+      this._router.navigateByUrl('/lets_play');
+    });
   }
 
 }
