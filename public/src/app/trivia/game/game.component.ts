@@ -72,16 +72,4 @@ export class GameComponent implements OnInit {
     this._apiService.questions = [];
     this._router.navigateByUrl('/trivia');
   }
-
-  // getQuestionsFromAPI(num: number): void {
-  //   this._apiService.getQuestions(num, (questions) => this.questions = questions);
-  // }
-
-  // getRandomQuestions(): void {
-  //   this._questionService.getRandomQuestions(5, (questions) => {
-  //     this.questions = questions;
-  //     console.log(this.questions);
-  //   });
-  // }
-
 }
