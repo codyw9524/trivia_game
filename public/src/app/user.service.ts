@@ -14,6 +14,21 @@ export class UserService {
     return JSON.parse(localStorage.getItem('current_user'));
   }
 
+  createUser(newUser: User, callback) {
+    return this._http.post('/users', newUser).subscribe(
+      res => {
+        const user = res.json();
+        if (!user.errors) {
+          localStorage.setItem('current_user', JSON.stringify(user));
+        } else {
+          this.currentUser = null;
+        }
+        callback(user);
+      },
+      err => console.log(err)
+    );
+  }
+
   logout(callback) {
     return this._http.delete('/users').subscribe(
       res => {

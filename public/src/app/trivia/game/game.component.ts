@@ -40,7 +40,6 @@ export class GameComponent implements OnInit {
     const totalAnswers = this.gameData.answers.length;
     const gameResult = new GameResult(correctAnswers, totalAnswers, this.currentUser._id);
     this._resultService.createResults(gameResult, (result) => {
-      console.log('result: ', result);
       if (result.errors) {
         for (const key of Object.keys(result.errors)) {
           const error = result.errors[key];
@@ -54,7 +53,6 @@ export class GameComponent implements OnInit {
 
   getCurrentUser(): void {
     this.currentUser = this._userService.getCurrentUser();
-    console.log('current user: ', this.currentUser);
   }
 
   validateSession(): void {

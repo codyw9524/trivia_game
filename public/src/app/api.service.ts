@@ -42,7 +42,6 @@ export class ApiService {
     if (apiRequest.difficulty !== '0') {
       url += `&difficulty=${apiRequest.difficulty}`;
     }
-    console.log('url: ', url);
     return this._http.get(url).subscribe(
       res => {
         const results = res.json().results;

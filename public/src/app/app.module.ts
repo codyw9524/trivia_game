@@ -17,6 +17,7 @@ import { NewQuestionComponent } from './trivia/new-question/new-question.compone
 import { GameComponent } from './trivia/game/game.component';
 import { ApiDashboardComponent } from './api-dashboard/api-dashboard.component';
 import { ResultsComponent } from './results/results.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ResultsComponent } from './results/results.component';
     NewQuestionComponent,
     GameComponent,
     ApiDashboardComponent,
-    ResultsComponent
+    ResultsComponent,
+    RegisterComponent
   ],
   imports: [
     NgbModule.forRoot(),

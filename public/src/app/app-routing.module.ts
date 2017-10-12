@@ -6,11 +6,17 @@ import { LoginComponent } from './login/login.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { GameComponent } from './trivia/game/game.component';
+import { RegisterComponent } from './register/register.component';
+
 const routes: Routes = [
     {
         path: '',
         pathMatch: 'full',
         component: LoginComponent
+    },
+    {
+        path: 'register',
+        component: RegisterComponent
     },
     {
         path: 'trivia',
