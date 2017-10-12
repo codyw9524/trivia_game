@@ -16,7 +16,7 @@ import { User } from '../../user';
 export class GameComponent implements OnInit {
   currentUser: User = new User();
   questions: Question[];
-  gameData: any = { answers: [] };
+  gameData = { answers: [] };
   errors: string[] = [];
 
   constructor(
@@ -31,8 +31,6 @@ export class GameComponent implements OnInit {
     this.getCurrentUser();
     this.validateSession();
     this.getQuestionsFromService();
-    // this.getRandomQuestions();
-    // this.getQuestionsFromAPI();
   }
 
   onSubmit() {
