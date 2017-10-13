@@ -1,12 +1,12 @@
-import { ApiService } from './../../api.service';
-import { ResultService } from './../../result.service';
-import { GameResult } from './../../game-result';
+import { ApiService } from './../../services/api.service';
+import { ResultService } from './../../services/result.service';
+import { GameResult } from './../../models/game-result';
 import { Router } from '@angular/router';
-import { QuestionService } from './../../question.service';
-import { UserService } from './../../user.service';
-import { Question } from './../../question';
+import { QuestionService } from './../../services/question.service';
+import { UserService } from './../../services/user.service';
+import { Question } from './../../models/question';
 import { Component, OnInit } from '@angular/core';
-import { User } from '../../user';
+import { User } from '../../models/user';
 
 @Component({
   selector: 'app-game',

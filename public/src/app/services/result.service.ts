@@ -1,6 +1,7 @@
-import { GameResult } from './game-result';
 import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
+
+import { GameResult } from '../models/game-result';
 
 @Injectable()
 export class ResultService {

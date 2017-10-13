@@ -1,5 +1,5 @@
-import { GameResult } from './../game-result';
-import { ResultService } from './../result.service';
+import { GameResult } from './../../models/game-result';
+import { ResultService } from './../../services/result.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({

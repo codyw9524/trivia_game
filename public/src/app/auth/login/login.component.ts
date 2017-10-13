@@ -1,14 +1,14 @@
-import { Router } from '@angular/router';
-import { UserService } from './../user.service';
-import { User } from './../user';
+import { UserService } from './../../services/user.service';
+import { User } from './../../models/user';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
-export class RegisterComponent implements OnInit {
+export class LoginComponent implements OnInit {
   newUser: User = new User();
   errors: string[] = [];
 
@@ -18,11 +18,14 @@ export class RegisterComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    // this.newUser.email = 'cody@cody.com';
+    // this.newUser.password = 'pass';
+    // this.onSubmit();
   }
 
   onSubmit() {
     this.errors = [];
-    this._userService.createUser(this.newUser, (user) => {
+    this._userService.authenticate(this.newUser, (user) => {
       if (user.errors) {
         for (const key of Object.keys(user.errors)) {
           const error = user.errors[key];

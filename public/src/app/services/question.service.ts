@@ -1,6 +1,8 @@
 import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
-import { Question } from './question';
+
+import { Question } from '../models/question';
+
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 

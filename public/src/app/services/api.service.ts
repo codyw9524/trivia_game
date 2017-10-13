@@ -1,11 +1,9 @@
-import { ApiRequest } from './apirequest';
-import { Question } from './question';
 import { Http } from '@angular/http';
 import { Injectable } from '@angular/core';
-import { Answer } from './answer';
 
-// 10 questions w/ category
-// https://opentdb.com/api.php?amount=10&category=15
+import { ApiRequest } from '../models/apirequest';
+import { Question } from '../models/question';
+import { Answer } from '../models/answer';
 
 @Injectable()
 export class ApiService {
@@ -20,7 +18,7 @@ export class ApiService {
     );
   }
 
-  getQuestionsFromService() {
+  getQuestionsFromService(): Question[] {
     return this.questions;
   }
 
