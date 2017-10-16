@@ -31,7 +31,7 @@ export class ApiDashboardComponent implements OnInit {
     const category_ids = [];
     this.categories.forEach((category) => category_ids.push(category.id));
     this._apiService.getQuestionsFromAPI(this.APIRequest, category_ids, () => {
-      this._router.navigateByUrl('/lets_play');
+      this._router.navigateByUrl('/trivia/play');
     });
   }
 

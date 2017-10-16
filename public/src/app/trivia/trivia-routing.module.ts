@@ -10,7 +10,7 @@ import { TriviaComponent } from './trivia.component';
 
 const routes: Routes = [
     {
-      path: 'trivia',
+      path: '',
       component: TriviaComponent,
       children: [
         {
