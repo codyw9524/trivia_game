@@ -16,28 +16,10 @@ import { UserService } from './services/user.service';
 
 // Components
 import { AppComponent } from './app.component';
-// import { LoginComponent } from './login/login.component';
-// import { TriviaComponent } from './trivia/trivia.component';
-// import { DashboardComponent } from './trivia/dashboard/dashboard.component';
-// import { NewQuestionComponent } from './trivia/new-question/new-question.component';
-// import { GameComponent } from './trivia/game/game.component';
-// import { ApiDashboardComponent } from './api-dashboard/api-dashboard.component';
-// import { ResultsComponent } from './results/results.component';
-// import { RegisterComponent } from './register/register.component';
-// import { AuthComponent } from './auth/auth.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    // LoginComponent,
-    // TriviaComponent,
-    // DashboardComponent,
-    // NewQuestionComponent,
-    // GameComponent,
-    // ApiDashboardComponent,
-    // ResultsComponent,
-    // RegisterComponent,
-    // AuthComponent
+    AppComponent
   ],
   imports: [
     NgbModule.forRoot(),
@@ -49,10 +31,7 @@ import { AppComponent } from './app.component';
     TriviaModule
   ],
   providers: [
-    UserService,
-    // QuestionService,
-    // ResultService,
-    // ApiService
+    UserService
   ],
   bootstrap: [AppComponent]
 })
