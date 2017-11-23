@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-trivia',
   templateUrl: './trivia.component.html',
-  styleUrls: ['./trivia.component.css']
+  styleUrls: ['./trivia.component.scss']
 })
 export class TriviaComponent implements OnInit {
 

@@ -11,11 +11,11 @@
           <label>Password</label>
           <input type="text" name="password" class="form-control" [(ngModel)]="newUser.password">
         </div>
-        <button type="submit" class="btn btn-defaul">Login</button> 
+        <button type="submit" class="btn btn-primary">Login</button> 
       </form>
       <p [ngStyle]="{ 'color': 'red' }"
         *ngFor="let error of errors">{{ error }}</p>
-      <a href [routerLink]="['/register']">Register for a free account</a>
+      <a href [routerLink]="['register']">Register for a free account</a>
     </div>
   </div>
 </div>

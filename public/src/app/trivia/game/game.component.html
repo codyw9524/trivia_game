@@ -3,24 +3,23 @@
   <p>Choose and answer for each of the questions and submit the test once done.</p>
   <p>Good luck!</p>
 </div>
-<div class="row" *ngFor="let question of questions; let idx = index">
-  <div class="col question_box">
+<div *ngFor="let question of questions; let idx = index">
+  <div class="col question-container">
     <p [innerHTML]="question.question"></p>
-    <div *ngFor="let answer of question.answers">
-      <input type="radio" name="{{ idx }}"
-      [(ngModel)]="gameData.answers[idx]"
-      [value]="answer"><span [innerHTML]="answer.answer"></span>
+    <div class="answer-container" *ngFor="let answer of question.answers">
+      <input type="radio"
+             name="{{ idx }}"
+             [(ngModel)]="gameData.answers[idx]"
+             [value]="answer">
+      <span [innerHTML]="answer.answer"></span>
     </div>
-    <option [ngValue]=""></option>
   </div>
 </div>
-<div class="row">
+<div>
   <button (click)="onSubmit()" class="btn btn-primary game_button">Submit</button>
   <button (click)="cancelGame()" class="btn btn-default game_button">Cancel</button>
 </div>
-<div class="row">
-  <div class="col footer">
-      <p [ngStyle]="{ 'color': 'red' }"
-      *ngFor="let error of errors">{{ error }}</p>
-  </div>
+<div class="col footer">
+    <p [ngStyle]="{ 'color': 'red' }"
+        *ngFor="let error of errors">{{ error }}</p>
 </div>

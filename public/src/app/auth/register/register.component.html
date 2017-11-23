@@ -15,7 +15,7 @@
             <label>Password</label>
             <input type="text" name="password" class="form-control" [(ngModel)]="newUser.password">
           </div>
-          <button type="submit" class="btn btn-defaul">Register</button> 
+          <button type="submit" class="btn btn-primary">Register</button> 
         </form>
         <p [ngStyle]="{ 'color': 'red' }"
           *ngFor="let error of errors">{{ error }}</p>
