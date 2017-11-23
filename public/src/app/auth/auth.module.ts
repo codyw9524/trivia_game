@@ -1,5 +1,5 @@
 // Modules
-import { ContactRoutingModule } from './auth-routing.module';
+import { AuthRoutingModule } from './auth-routing.module';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
@@ -24,7 +24,7 @@ import { RegisterComponent } from './register/register.component';
       CommonModule,
       FormsModule,
       HttpModule,
-      ContactRoutingModule
+      AuthRoutingModule
     ],
     providers: [],
   })
