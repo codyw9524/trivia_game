@@ -7,6 +7,9 @@
     border: 2px solid black;
     margin: 1em 0 1em ;
     padding: 15px;
+    .inline-block {
+        display: inline-block;
+    }
 }
 .answer-container{
     input {

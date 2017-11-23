@@ -1,11 +1,12 @@
 <div class="header">
   <h5>Hi {{ currentUser.name }}</h5>
-  <p>Choose and answer for each of the questions and submit the test once done.</p>
+  <p>Choose an answer for each of the questions and submit the test once done.</p>
   <p>Good luck!</p>
 </div>
 <div *ngFor="let question of questions; let idx = index">
   <div class="col question-container">
-    <p [innerHTML]="question.question"></p>
+    <p class="inline-block">{{ idx + 1 }}.</p>
+    <p class="inline-block" [innerHTML]="question.question"></p>
     <div class="answer-container" *ngFor="let answer of question.answers">
       <input type="radio"
              name="{{ idx }}"
@@ -16,8 +17,8 @@
   </div>
 </div>
 <div>
-  <button (click)="onSubmit()" class="btn btn-primary game_button">Submit</button>
-  <button (click)="cancelGame()" class="btn btn-default game_button">Cancel</button>
+  <button (click)="onSubmit()" class="btn btn-primary btn-lg game_button">Submit</button>
+  <button (click)="cancelGame()" class="btn btn-secondary btn-lg game_button">Cancel</button>
 </div>
 <div class="col footer">
     <p [ngStyle]="{ 'color': 'red' }"
