@@ -16,8 +16,6 @@ export class QuestionService {
       res => callback(res.json()),
       err => console.error(err)
     );
-    // return this._http.post('/questions', newQuestion).map(
-    //   res => res.json());
   }
 
   getRandomQuestions(num: number, callback): Subscription {

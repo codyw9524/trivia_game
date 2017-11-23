@@ -1,3 +1,4 @@
+import { GameData } from './../../models/gameData';
 import { ApiService } from './../../services/api.service';
 import { ResultService } from './../../services/result.service';
 import { GameResult } from './../../models/game-result';
@@ -16,7 +17,7 @@ import { User } from '../../models/user';
 export class GameComponent implements OnInit {
   currentUser: User = new User();
   questions: Question[];
-  gameData = { answers: [] };
+  gameData = new GameData;
   errors: string[] = [];
 
   constructor(
@@ -34,9 +35,11 @@ export class GameComponent implements OnInit {
   }
 
   onSubmit() {
+    this.errors = [];
+    const totalQuestions = this.questions.length;
     const correctAnswers = this.gameData.answers.filter((answer) => answer.correct === true).length;
     const totalAnswers = this.gameData.answers.length;
-    const gameResult = new GameResult(correctAnswers, totalAnswers, this.currentUser._id);
+    const gameResult = new GameResult(correctAnswers, totalAnswers, totalQuestions, this.currentUser._id);
     this._resultService.createResults(gameResult, (result) => {
       if (result.errors) {
         for (const key of Object.keys(result.errors)) {

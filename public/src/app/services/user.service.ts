@@ -40,10 +40,6 @@ export class UserService {
     );
   }
 
-  session(callback) {
-    console.log('');
-  }
-
   authenticate(loginUser: User, callback) {
     return this._http.post('/users/login', loginUser).subscribe(
       res => {

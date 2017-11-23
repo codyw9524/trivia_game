@@ -6,8 +6,7 @@ const GameResultSchema = new mongoose.Schema({
         ref: 'User'
     },
     totalAnswers: {
-        type: Number,
-        min: [5, 'Please answer all questions'] 
+        type: Number
     },
     correctAnswers: {
         type: Number

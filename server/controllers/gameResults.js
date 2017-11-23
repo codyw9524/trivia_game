@@ -15,6 +15,15 @@ class GameResultsController {
     }
 
     create(req, res){
+        if (req.body.totalAnswers != req.body.totalQuestions) {
+            return res.json({
+                'errors': {
+                    'questions': {
+                        'message': 'Please answer every question.'
+                    }
+                }
+            })
+        }
         GameResult.create(req.body, (err, result) => {
             if (err) {
                 return res.json(err);
